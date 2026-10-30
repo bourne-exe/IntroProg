@@ -303,7 +303,7 @@ void fyllCirkel(int radie){
     cout << "Fylld cirkel" << endl;
     for (int y=-radie; y<radie; y++){
         for (int x=-radie; x<radie; x++){
-            if ((y*y)+(x*x)< (radie*radie)){
+            if ((y*y)+(x*x)<(radie*radie)){
                 cout << "#";
             }else cout << " ";
         }
