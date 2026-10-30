@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -254,4 +255,72 @@ void skrivaUtFibonacci(int n){
 }
 
 //12.10
+void skrivMultiplikationsmatris (){
+    cout << "Multiplikationsmatris" << endl ;
+    for (int r=1; r<=10; ++r){
+        for (int k=1; k<=10; ++k){
+            cout << setw(5) << r*k;
+            cout << endl;
+        }
+        cout << endl;
 
+    }
+    cout << endl;
+}
+void fyllRektangel(int hojd,int bredd){
+    cout << "Fylld rektangel" << endl;
+    for (int i=0; i<hojd; ++i){
+        for (int j=0; j<bredd; ++j){
+            cout << "#";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+void ritaRektangel(int hojd,int bredd){
+    cout << "Ritad rektangel." << endl ;
+    for (int i=0; i<hojd; ++i){
+        for (int j=0; j<bredd; ++j){
+            if (i==0 || i==hojd-1 || j==0 || j == bredd-1){
+                cout << "#";
+            }else cout << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+void fyllTriangel(int hojd){
+    cout << "Fylld triangel." << endl;
+    for (int i=0; i<hojd; ++i){
+        for (int j=0; j<i; ++j){
+            cout << "#";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+void fyllCirkel(int radie){
+    cout << "Fylld cirkel" << endl;
+    for (int y=-radie; y<radie; y++){
+        for (int x=-radie; x<radie; x++){
+            if ((y*y)+(x*x)< (radie*radie)){
+                cout << "#";
+            }else cout << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+void ritaMedText(){
+    cout << "ritaMedText" << endl;
+    cout << endl;
+    skrivMultiplikationsmatris();
+    fyllRektangel(4,20);
+    cout << endl;
+    ritaRektangel(4,20);
+    cout << endl;
+    fyllTriangel(5);
+    cout << endl;
+    fyllCirkel(5);
+    cout << endl;
+}
