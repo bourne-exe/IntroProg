@@ -71,10 +71,11 @@ void utforSpelomgang();
 void jamforFleraIntegralberakningar();
 void jamforFleraKvadratrotsberakningar();
 void skrivaUtFibonacci(int n);
+void ritaMedText();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    skrivaUtFibonacci(20);
+    ritaMedText();
     return 0;
 }
