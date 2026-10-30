@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a095dda647e90cb67f7a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IntroProg",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IntroProg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IntroProg-Debug-fdb66e9b9962590af189.json",
+					"name" : "IntroProg",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/sebastianolving/Documents/JTH/Kurser/Year1/IntroProg/Labbar/IntroProg/build/Qt_6_11_2_for_macOS_Debug",
+		"source" : "/Users/sebastianolving/Documents/JTH/Kurser/Year1/IntroProg/Labbar/IntroProg"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
