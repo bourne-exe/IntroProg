@@ -70,10 +70,11 @@ void undersokaSlumptalsgeneratorn();
 void utforSpelomgang();
 void jamforFleraIntegralberakningar();
 void jamforFleraKvadratrotsberakningar();
+void skrivaUtFibonacci(int n);
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    jamforFleraKvadratrotsberakningar();
+    skrivaUtFibonacci(20);
     return 0;
 }

@@ -237,5 +237,21 @@ void jamforFleraKvadratrotsberakningar(){
 }
 
 //12.9
+void skrivaUtFibonacci(int n){
+    if (n >=1)
+        cout << " 1:1 ";
+    if (n >=2)
+        cout << ", 2:1 ";
+    int x2 = 1;
+    int x1 = 1;
+    for (int i=3; i<=n ; ++i){
+        int summa;
+        summa = x1+x2;
+        x1=x2;
+        x2=summa;
+        cout << i << ";" << summa << endl;
+    }
+}
 
+//12.10
 
