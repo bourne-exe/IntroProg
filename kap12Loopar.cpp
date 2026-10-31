@@ -422,8 +422,8 @@ bool arPrimtal (int n){
 }
 void provaPrimtal(){
     cout << endl
-    << " provaPrimtal " << endl
-    << " Knappa in tal , avsluta med 0." << endl ;
+    << "provaPrimtal " << endl
+    << "Knappa in tal, avsluta med 0." << endl ;
     while (true){
         cout << "ge tal :";
         int tal = 1;
@@ -449,3 +449,20 @@ void provarPrimtalV2(){
     provaPrimtal();
     testaPrimtal();
 }
+
+//12.14
+void skrivTabellMedAntalPrimtal(){
+    cout << "Intervall" << "     " << "Antal" << endl;
+    for (int start=0; start<10000; start+=100){
+        int count = 0;
+        for (int n=start; n<start+100; n++){
+            if (arPrimtal(n)){
+                count++;
+            }
+        }
+        cout << setw(4) << start << setw(5) << start+99 << setw(8) << count << endl;
+    }
+}
+
+//12.15
+
