@@ -73,10 +73,11 @@ void jamforFleraKvadratrotsberakningar();
 void skrivaUtFibonacci(int n);
 void ritaMedText();
 void doMoreEstimatesOfPi();
+void testRatinalApproximation();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    doMoreEstimatesOfPi();
+    testRatinalApproximation();
     return 0;
 }
