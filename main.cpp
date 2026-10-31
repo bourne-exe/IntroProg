@@ -72,10 +72,11 @@ void jamforFleraIntegralberakningar();
 void jamforFleraKvadratrotsberakningar();
 void skrivaUtFibonacci(int n);
 void ritaMedText();
+void doMoreEstimatesOfPi();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    ritaMedText();
+    doMoreEstimatesOfPi();
     return 0;
 }
