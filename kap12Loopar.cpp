@@ -324,3 +324,28 @@ void ritaMedText(){
     fyllCirkel(5);
     cout << endl;
 }
+
+//12.11
+double estimateOfCircleAreaFromRadius(int radius){
+    int area = 0;
+    for (int y=-radius; y<=radius; y++){
+        for (int x=-radius; x<=radius; ++x){
+            if ((y*y)+(x*x)<=radius*radius){
+                area++;
+            }
+        }
+    }
+    return area;
+}
+
+double estimateOfPiFromRadius(int radius){
+    double area = estimateOfCircleAreaFromRadius(radius);
+    return area / (radius*radius);
+}
+
+void doMoreEstimatesOfPi(){
+    for (int radius = 1; radius<10000; radius = radius*2){
+        double pi = estimateOfPiFromRadius(radius);
+        cout << "radius = " << radius << ", pi estimates to " << pi << endl;
+    }
+}
