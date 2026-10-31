@@ -76,10 +76,11 @@ void doMoreEstimatesOfPi();
 void testRationalApproximation();
 void testRationalApproxmiationV2();
 void provarPrimtalV2();
+void skrivTabellMedAntalPrimtal();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    provarPrimtalV2();
+    skrivTabellMedAntalPrimtal();
     return 0;
 }
