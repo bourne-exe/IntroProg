@@ -349,3 +349,29 @@ void doMoreEstimatesOfPi(){
         cout << "radius = " << radius << ", pi estimates to " << pi << endl;
     }
 }
+
+//12.12
+void writeRationalApproximationOfPi(){
+    double const pi = M_PI;
+    int bestX = 1;
+    int bestY = 1;
+    double bestDiff = 100;
+    for (int x=1; x<100; ++x){
+        for (int y=1; y<100; ++y){
+            double diff = 1.0*x/y - pi;
+            if (diff < 0){
+                diff = -diff;
+            }
+            if (diff < bestDiff){
+                bestDiff = diff;
+                bestX = x;
+                bestY = y;
+            }
+        }
+    }
+    cout << bestX << "/" << bestY << " = " << 1.0*bestX/bestY << endl;
+}
+
+void testRatinalApproximation(){
+    writeRationalApproximationOfPi();
+}
