@@ -73,11 +73,13 @@ void jamforFleraKvadratrotsberakningar();
 void skrivaUtFibonacci(int n);
 void ritaMedText();
 void doMoreEstimatesOfPi();
-void testRatinalApproximation();
+void testRationalApproximation();
+void testRationalApproxmiationV2();
+void provarPrimtalV2();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    testRatinalApproximation();
+    provarPrimtalV2();
     return 0;
 }
