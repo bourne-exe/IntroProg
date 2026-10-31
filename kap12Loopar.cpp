@@ -375,3 +375,77 @@ void writeRationalApproximationOfPi(){
 void testRatinalApproximation(){
     writeRationalApproximationOfPi();
 }
+
+//12.12.1
+void printRationalApproximation(double x, int antalSiffror){
+    int limit =1;
+    for (int i=0; i<antalSiffror; ++i){
+        limit *= 10;
+    }
+    limit -=1;
+
+    double bastaKvot = 0;
+    int bastaTaljare = 0;
+    int bastaNamnare = 0;
+    double minstaFel = 1000000;
+
+    for (int namnare = 1; namnare <= limit; ++namnare){
+        for (int taljare = 1; taljare <= limit; ++taljare){
+            double kvot = double(taljare) / namnare;
+            double fel = fabs(kvot - x);
+            if (fel < minstaFel){
+                minstaFel = fel;
+                bastaKvot = kvot;
+                bastaTaljare = taljare;
+                bastaNamnare = namnare;
+            }
+        }
+    }
+    cout << antalSiffror << ": " << bastaTaljare << ", " << bastaNamnare << ", " << bastaKvot << endl;
+}
+void testRationalApproxmiationV2(){
+    for (int i=1; i<=4; ++i)
+        printRationalApproximation(M_PI, i);
+}
+
+//12.13
+bool arPrimtal (int n){
+    if (n<2){
+        return false;
+    }
+    for (int k=2; k<=n/k; ++k){
+        if (n % k == 0){
+            return false;
+        }
+    }
+    return true;
+}
+void provaPrimtal(){
+    cout << endl
+    << " provaPrimtal " << endl
+    << " Knappa in tal , avsluta med 0." << endl ;
+    while (true){
+        cout << "ge tal :";
+        int tal = 1;
+        cin >> tal;
+        if (tal <=0)
+            break;
+        if (arPrimtal(tal))
+            cout << tal << " är primtal " << endl ;
+        else cout << tal << " kan faktoriseras " << endl ;
+    }
+    cout << "(avslutar provaPrimtal)" << endl;
+}
+void testaPrimtal(){
+    cout << " testaPrimtal " << endl ;
+    assert(arPrimtal(7));
+    assert(arPrimtal(7919));
+    assert(!arPrimtal(7913));
+    assert(!arPrimtal(10201));
+    cout << "testaPrimtal lyckades" << endl;
+}
+
+void provarPrimtalV2(){
+    provaPrimtal();
+    testaPrimtal();
+}
