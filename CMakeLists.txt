@@ -15,7 +15,9 @@ add_executable(IntroProg main.cpp
     kap08TestaKod.cpp
     kap09MerOmVariabler.cpp
     kap10MerOmFunktioner.cpp
-    kap12Loopar.cpp)
+    kap12Loopar.cpp
+    kap13charOchString.cpp
+)
 
 include(GNUInstallDirs)
 install(TARGETS IntroProg
