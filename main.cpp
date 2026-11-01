@@ -1,6 +1,11 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <ctime>
+#include <cstdlib>
+#include <cassert>
+#include <stdio.h>
+#include <time.h>
 
 using namespace std;
 using namespace this_thread;
@@ -82,11 +87,6 @@ void provaCollatzfunktionerna();
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    cout << "skriver ut tre slumptal" << endl;
 
-    cout << rand() << " " << rand() << " " << rand() << endl;
-
-    cout << "skriver ut ytterligare tre slumptal" << endl;
-    cout << rand() << " " << rand() << " " << rand() << endl;
     return 0;
 }
