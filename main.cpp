@@ -77,10 +77,16 @@ void testRationalApproximation();
 void testRationalApproxmiationV2();
 void provarPrimtalV2();
 void skrivTabellMedAntalPrimtal();
+void provaCollatzfunktionerna();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    skrivTabellMedAntalPrimtal();
+    cout << "skriver ut tre slumptal" << endl;
+
+    cout << rand() << " " << rand() << " " << rand() << endl;
+
+    cout << "skriver ut ytterligare tre slumptal" << endl;
+    cout << rand() << " " << rand() << " " << rand() << endl;
     return 0;
 }
