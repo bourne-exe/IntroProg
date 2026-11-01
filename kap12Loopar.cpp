@@ -465,4 +465,79 @@ void skrivTabellMedAntalPrimtal(){
 }
 
 //12.15
-
+void skrivCollatzSekvens(long int startvarde){
+    if (startvarde < 1){
+        cout << "Startvärdet måste vara större än 1" << endl;
+        return;
+    }
+    cout << startvarde << endl;
+    long int n = startvarde;
+    while (n != 1){
+        if (n % 2 == 0){
+            n = n/2;
+        }else n = n*3+1;
+        cout << n << endl;
+    }
+    cout << endl;
+}
+long int collatzMax(long int startvarde){
+    if (startvarde < 1){
+        cout << "Startvärdet måste vara större än 1" << endl;
+        return 0;
+    }
+    long int n = startvarde;
+    long int storst = startvarde;
+    while (n != 1){
+        if (n % 2 == 0){
+            n = n/2;
+        }else n = n*3+1;
+        if (n > storst){
+            storst = n;
+        }
+    }
+    return storst;
+}
+long int collatzLangd(long int startvarde){
+    if (startvarde < 1){
+        cout << "Startvärdet måste vara större än 1" << endl;
+        return 0;
+    }
+    long int n = startvarde;
+    long int langd = 1;
+    while (n != 1){
+        if (n % 2 == 0){
+            n = n/2;
+        }else n = n*3+1;
+        langd += 1;
+    }
+    return langd;
+}
+void skrivCollatzStatistik(long int maxN){
+    long int bastaMax = 0;
+    long int bastaLangd = 0;
+    long int startForLangd = 0;
+    long int startForMax = 0;
+    for (long int i=1; i<=maxN; ++i){
+        long int maxVarde = collatzMax(i);
+        long int langd = collatzLangd(i);
+        if (maxVarde > bastaMax){
+            bastaMax = maxVarde;
+            startForMax = i;
+        }
+        if (langd > bastaLangd){
+            bastaLangd = langd;
+            startForLangd = i;
+        }
+    }
+    cout << "maximalt värde = " << bastaMax << "(för start värde = " << startForMax << ")" << endl;
+    cout << "maximalt värde = " << bastaLangd << "(för start värde = " << startForLangd << ")" << endl;
+}
+void provaCollatzfunktionerna(){
+    cout << endl << "provaCollatzfunktionerna" << endl;
+    cout << "Anropar skrivCollatzSekvens(7)" << endl;
+    skrivCollatzSekvens(7);
+    cout << "collatzMax(7)= " << collatzMax(7) << endl;
+    cout << "collatzLangd(7)= " << collatzLangd(7) << endl;
+    skrivCollatzStatistik(10000);
+    cout << endl;
+}
