@@ -60,3 +60,26 @@ void automattestaVersalstrang(){
 
     cout << "test av versalStrang lyckades!" << endl;
 }
+
+//13.2.12
+string rubrikstrang(const string& str){
+    string str1 = str;
+    for (size_t i=0; i<str1.size(); ++i){
+        if (i== 0){
+            str1[i] = toupper(str1[i]);
+        } else if (str1[i-1] == ' '){
+            str1[i] = toupper(str1[i]);
+        } else str1[i] = tolower(str1[i]);
+    }
+    return str1;
+}
+
+void automattestaRubrikstrang(){
+    cout << "testar rubrikstrang" << endl;
+
+    assert (rubrikstrang("ha en BRA DAG !") == "Ha En Bra Dag !");
+    assert (rubrikstrang("HA EN BRA DAG !") == "Ha En Bra Dag !");
+    assert (rubrikstrang("") == "");
+    cout << "test av rubrikstrang lyckades!" << endl;
+}
+
