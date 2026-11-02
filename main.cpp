@@ -84,9 +84,15 @@ void provarPrimtalV2();
 void skrivTabellMedAntalPrimtal();
 void provaCollatzfunktionerna();
 
+//Kap 13
+void experimentMedChar();
+void skrivNagraAsciiTecken();
+void stringdemo1();
+void automattestaVersalstrang();
+
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-
+    automattestaVersalstrang();
     return 0;
 }
