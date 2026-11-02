@@ -89,10 +89,11 @@ void experimentMedChar();
 void skrivNagraAsciiTecken();
 void stringdemo1();
 void automattestaVersalstrang();
+void automattestaRubrikstrang();
 
 int main(){
 
     cout << "Labbar från kompendiet!" << endl << endl;
-    automattestaVersalstrang();
+    automattestaRubrikstrang();
     return 0;
 }
