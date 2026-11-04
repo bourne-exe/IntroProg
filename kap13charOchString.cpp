@@ -83,3 +83,33 @@ void automattestaRubrikstrang(){
     cout << "test av rubrikstrang lyckades!" << endl;
 }
 
+//13.2.14
+string reducerad(const string& str){
+    string resultat = "";
+    bool foregoendeTeckenVarMellanslag = false;
+
+    for (size_t i=0; i<str.size(); ++i){
+        const char tecken = str[i];
+        if (tecken == ' '){
+            if (foregoendeTeckenVarMellanslag)
+                continue;
+            resultat += ' ';
+            foregoendeTeckenVarMellanslag = true;
+        }
+        else{
+            resultat += tecken;
+            foregoendeTeckenVarMellanslag = false;
+        }
+    }
+    return resultat;
+}
+
+void automattestaReducerad(){
+    cout << "testar reducerad" << endl;
+
+    assert(reducerad("  Ha en bra dag!   ") == " Ha en bra dag! ");
+    assert(reducerad(" A   B  C") == " A B C");
+    assert(reducerad("ABC") == "ABC");
+
+    cout << "testen av reducared lyckades!" << endl;
+}
