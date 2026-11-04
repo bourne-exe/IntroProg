@@ -78,7 +78,8 @@ void jamforFleraKvadratrotsberakningar();
 void skrivaUtFibonacci(int n);
 void ritaMedText();
 void doMoreEstimatesOfPi();
-void testRationalApproximation();
+void writeRationalApproximationOfPi();
+void testRatinalApproximation();
 void testRationalApproxmiationV2();
 void provarPrimtalV2();
 void skrivTabellMedAntalPrimtal();
@@ -90,10 +91,10 @@ void skrivNagraAsciiTecken();
 void stringdemo1();
 void automattestaVersalstrang();
 void automattestaRubrikstrang();
+void automattestaReducerad();
 
 int main(){
-
     cout << "Labbar från kompendiet!" << endl << endl;
-    automattestaRubrikstrang();
+    automattestaReducerad();
     return 0;
 }
