@@ -410,10 +410,7 @@ void testRationalApproxmiationV2(){
 
 //12.13
 bool arPrimtal (int n){
-    if (n<2){
-        return false;
-    }
-    for (int k=2; k<=n/k; ++k){
+    for (int k=2; k<n; ++k){
         if (n % k == 0){
             return false;
         }
@@ -431,13 +428,13 @@ void provaPrimtal(){
         if (tal <=0)
             break;
         if (arPrimtal(tal))
-            cout << tal << " är primtal " << endl ;
-        else cout << tal << " kan faktoriseras " << endl ;
+            cout << tal << " är primtal " << endl;
+        else cout << tal << " kan faktoriseras " << endl;
     }
     cout << "(avslutar provaPrimtal)" << endl;
 }
 void testaPrimtal(){
-    cout << " testaPrimtal " << endl ;
+    cout << "testaPrimtal" << endl;
     assert(arPrimtal(7));
     assert(arPrimtal(7919));
     assert(!arPrimtal(7913));
@@ -470,13 +467,12 @@ void skrivCollatzSekvens(long int startvarde){
         cout << "Startvärdet måste vara större än 1" << endl;
         return;
     }
-    cout << startvarde << endl;
     long int n = startvarde;
     while (n != 1){
         if (n % 2 == 0){
             n = n/2;
         }else n = n*3+1;
-        cout << n << endl;
+        cout << n << " ";
     }
     cout << endl;
 }
@@ -519,13 +515,13 @@ void skrivCollatzStatistik(long int maxN){
     long int startForMax = 0;
     for (long int i=1; i<=maxN; ++i){
         long int maxVarde = collatzMax(i);
-        long int langd = collatzLangd(i);
+        long int maxlangd = collatzLangd(i);
         if (maxVarde > bastaMax){
             bastaMax = maxVarde;
             startForMax = i;
         }
-        if (langd > bastaLangd){
-            bastaLangd = langd;
+        if (maxlangd > bastaLangd){
+            bastaLangd = maxlangd;
             startForLangd = i;
         }
     }
