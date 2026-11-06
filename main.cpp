@@ -92,9 +92,10 @@ void stringdemo1();
 void automattestaVersalstrang();
 void automattestaRubrikstrang();
 void automattestaReducerad();
+void automattestaTrimmad();
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    automattestaReducerad();
+    automattestaTrimmad();
     return 0;
 }
