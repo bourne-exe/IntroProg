@@ -164,7 +164,7 @@ bool arKonsonant(char ch){
     return false;
 }
 void automattestaArVokalOchArKonsonant(){
-    cout << "outomattestar arVokal och arKonsonant" << endl;
+    cout << "automattestar arVokal och arKonsonant" << endl;
 
     string vokaler = "aeiouyAEIOUY";
     string konsonanter = "bcdfghjklmnpqrstvxzBCDFGHJKLMNPQRSTVXZ";
