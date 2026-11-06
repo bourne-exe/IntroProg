@@ -113,3 +113,33 @@ void automattestaReducerad(){
 
     cout << "testen av reducared lyckades!" << endl;
 }
+
+//13.2.15
+string trimmad (const string& str){
+    string resultat = "";
+    bool foregoendeTeckenVarMellanslag = true;
+
+    for (size_t i=0; i<str.size(); ++i){
+        const char tecken = str[i];
+        if (tecken == ' '){
+            foregoendeTeckenVarMellanslag = true;
+        }
+        else{
+            if (foregoendeTeckenVarMellanslag && resultat != "")
+                resultat += ' ';
+            resultat += tecken;
+            foregoendeTeckenVarMellanslag = false;
+        }
+    }
+    return resultat;
+}
+
+void automattestaTrimmad(){
+    cout << "testar trimmad" << endl;
+    assert(trimmad("   Ha en bra dag!  ") == "Ha en bra dag!");
+    assert(trimmad(" A   B C ") == "A B C");
+    assert(trimmad("     ") == "");
+    assert(trimmad("") == "");
+    assert(trimmad("abc") == "abc");
+    cout << "testen lyckades!" << endl;
+}
