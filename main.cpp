@@ -93,9 +93,10 @@ void automattestaVersalstrang();
 void automattestaRubrikstrang();
 void automattestaReducerad();
 void automattestaTrimmad();
+void automattestaArVokalOchArKonsonant();
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    automattestaTrimmad();
+    automattestaArVokalOchArKonsonant();
     return 0;
 }
