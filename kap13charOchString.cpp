@@ -143,3 +143,41 @@ void automattestaTrimmad(){
     assert(trimmad("abc") == "abc");
     cout << "testen lyckades!" << endl;
 }
+
+//13.2.16
+bool arVokal(char ch){
+    string vokaler = "aeiouyAEIOUY";
+
+    for (size_t i=0; i<vokaler.size(); ++i){
+        if (vokaler[i] == ch)
+            return true;
+    }
+    return false;
+}
+bool arKonsonant(char ch){
+    string konsonanter = "bcdfghjklmnpqrstvxzBCDFGHJKLMNPQRSTVXZ";
+
+    for (size_t i=0; i<konsonanter.size(); ++i){
+        if (konsonanter[i] == ch)
+            return true;
+    }
+    return false;
+}
+void automattestaArVokalOchArKonsonant(){
+    cout << "outomattestar arVokal och arKonsonant" << endl;
+
+    string vokaler = "aeiouyAEIOUY";
+    string konsonanter = "bcdfghjklmnpqrstvxzBCDFGHJKLMNPQRSTVXZ";
+    string andraTecken = ". ,?!; ";
+
+    for (size_t i=0; i<vokaler.size(); ++i){
+        assert(arVokal(vokaler[i]));
+    }
+    for (size_t i=0; i<konsonanter.size(); ++i){
+        assert(arKonsonant(konsonanter[i]));
+    }
+    for (size_t i=0; i<andraTecken.size(); ++i){
+        assert(!arVokal(andraTecken[i]) && !arKonsonant(andraTecken[i]));
+    }
+    cout << "testerna av arVokal/ArKonsonant lyckades!" << endl;
+}
