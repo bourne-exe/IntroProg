@@ -65,7 +65,7 @@ void automattestaVersalstrang(){
 string rubrikstrang(const string& str){
     string str1 = str;
     for (size_t i=0; i<str1.size(); ++i){
-        if (i== 0){
+        if (i==0){
             str1[i] = toupper(str1[i]);
         } else if (str1[i-1] == ' '){
             str1[i] = toupper(str1[i]);
