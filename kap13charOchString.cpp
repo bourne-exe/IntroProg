@@ -86,6 +86,7 @@ void automattestaRubrikstrang(){
 //13.2.14
 string reducerad(const string& str){
     string resultat = "";
+    int forstaBokstav = 0;
     bool foregoendeTeckenVarMellanslag = false;
 
     for (size_t i=0; i<str.size(); ++i){
@@ -115,29 +116,30 @@ void automattestaReducerad(){
 }
 
 //13.2.15
-string trimmad (const string& str){
+string trimmad(const string& str) {
     string resultat = "";
-    bool foregoendeTeckenVarMellanslag = true;
+    size_t antalMellanslag = 0;
 
-    for (size_t i=0; i<str.size(); ++i){
+    for (size_t i=0; i<str.size(); ++i) {
         const char tecken = str[i];
-        if (tecken == ' '){
-            foregoendeTeckenVarMellanslag = true;
+        if (tecken == ' ') {
+            ++antalMellanslag;
         }
         else{
-            if (foregoendeTeckenVarMellanslag && resultat != "")
-                resultat += ' ';
+            if (resultat != "")
+                resultat += string(antalMellanslag, ' ');
             resultat += tecken;
-            foregoendeTeckenVarMellanslag = false;
+            antalMellanslag = 0;
         }
     }
     return resultat;
 }
 
+
 void automattestaTrimmad(){
     cout << "testar trimmad" << endl;
     assert(trimmad("   Ha en bra dag!  ") == "Ha en bra dag!");
-    assert(trimmad(" A   B C ") == "A B C");
+    assert(trimmad(" A   B C ") == "A   B C");
     assert(trimmad("     ") == "");
     assert(trimmad("") == "");
     assert(trimmad("abc") == "abc");
