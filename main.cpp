@@ -95,8 +95,15 @@ void automattestaReducerad();
 void automattestaTrimmad();
 void automattestaArVokalOchArKonsonant();
 
+//Kap 14
+void provaSkrivUtVek();
+void testaFyllMedVarde();
+void testaFyllMedSlumptal();
+void testaInnehaller();
+void testaVektorfunktioner();
+
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    automattestaArVokalOchArKonsonant();
+    testaVektorfunktioner();
     return 0;
 }
