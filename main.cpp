@@ -101,9 +101,10 @@ void testaFyllMedVarde();
 void testaFyllMedSlumptal();
 void testaInnehaller();
 void testaVektorfunktioner();
+void testaFlerVektorfunktioner();
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    testaVektorfunktioner();
+    testaFlerVektorfunktioner();
     return 0;
 }
