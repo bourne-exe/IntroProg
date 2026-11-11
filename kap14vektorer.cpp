@@ -267,3 +267,21 @@ void testaFlerVektorfunktioner(){
     testaArSorterad();
     cout << "testet lyckades!" << endl;
 }
+
+//14.4
+void skrivUtVaxelV2(int antalKronor){
+    static vector<int> valorer{500, 200, 100, 20,10,5,2,1};
+    cout << antalKronor << " kronor är:" << endl;
+    for (int v=0; v<valorer.size(); ++v){
+        int valor = valorer[v];
+        if (antalKronor/valor > 0){
+            cout << antalKronor/valor << " x " << valor << endl;
+            antalKronor%=valor;
+        }
+    }
+}
+
+void provaSkrivUtVaxelV2(){
+    cout << "provar skrivUtVaxelV2" << endl;
+    skrivUtVaxelV2(947);
+}
