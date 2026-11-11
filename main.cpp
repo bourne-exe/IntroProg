@@ -102,9 +102,10 @@ void testaFyllMedSlumptal();
 void testaInnehaller();
 void testaVektorfunktioner();
 void testaFlerVektorfunktioner();
+void provaSkrivUtVaxelV2();
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    testaFlerVektorfunktioner();
+    provaSkrivUtVaxelV2();
     return 0;
 }
