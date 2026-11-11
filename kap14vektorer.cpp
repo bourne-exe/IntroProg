@@ -285,3 +285,32 @@ void provaSkrivUtVaxelV2(){
     cout << "provar skrivUtVaxelV2" << endl;
     skrivUtVaxelV2(947);
 }
+
+//14.5
+void fyllMedUnikaSlumptal(vector<int>& vek, int minst, int storst){
+    for (size_t i=0; i<vek.size(); ++i){
+        bool finns = true;
+        int slumptal = 0;
+        while(finns){
+            slumptal = minst + rand() % (storst - minst +1);
+            for (size_t j=0; j<vek.size(); ++j){
+                if (vek[j] == slumptal){
+                    finns = true;
+                    break;
+                }else finns = false;
+            }
+        }
+        vek[i] = slumptal;
+    }
+}
+
+void testaFyllMedUnikaSlumptal(){
+    vector<int> vek(5);
+    fyllMedUnikaSlumptal(vek, 1, 5);
+
+    for (size_t i=0; i<vek.size(); i++){
+        cout << vek[i] << " ";
+    }
+    cout << endl;
+}
+
