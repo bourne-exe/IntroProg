@@ -104,9 +104,10 @@ void testaVektorfunktioner();
 void testaFlerVektorfunktioner();
 void provaSkrivUtVaxelV2();
 void testaFyllMedUnikaSlumptal();
+void lottoexperimentera();
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    testaFyllMedUnikaSlumptal();
+    lottoexperimentera();
     return 0;
 }
