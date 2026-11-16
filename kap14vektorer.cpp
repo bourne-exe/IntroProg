@@ -383,5 +383,31 @@ void lottoexperimentera(){
 }
 
 
-
+//14.8.2
+void skrivUtSudoku(const array<array<int,9>,9>& sudoku){
+    for (int r = 0; r < 9; ++r) {
+        if (r % 3 == 0) cout << "+-------+-------+-------+\n";
+        for (int c = 0; c < 9; ++c) {
+            if (c % 3 == 0) cout << "| ";
+            if (sudoku[r][c] == 0) cout << "  ";
+            else cout << sudoku[r][c] << " ";
+        }
+        cout << "|\n";
+    }
+    cout << "+-------+-------+-------+\n";
+}
+void provaSkrivSudoku(){
+    array<array<int,9>,9>sudoku{{
+        {{6 ,0 ,2 ,5 ,8 ,1 ,3 ,9 ,7}},
+        {{7 ,8 ,1 ,9 ,0 ,4 ,5 ,2 ,0}},
+        {{5 ,0 ,0 ,6 ,2 ,7 ,8 ,0 ,1}},
+        {{0 ,7 ,4 ,2 ,9 ,0 ,6 ,8 ,3}},
+        {{9 ,3 ,8 ,4 ,1 ,0 ,2 ,0 ,5}},
+        {{2 ,6 ,5 ,0 ,7 ,3 ,0 ,0 ,4}},
+        {{0 ,5 ,6 ,0 ,4 ,2 ,7 ,3 ,9}},
+        {{0 ,2 ,0 ,3 ,6 ,9 ,1 ,5 ,8}},
+        {{3 ,1 ,9 ,0 ,0 ,8 ,0 ,6 ,0}}
+    }};
+    skrivUtSudoku(sudoku);
+}
 
