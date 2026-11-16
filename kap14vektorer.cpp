@@ -10,7 +10,7 @@ using namespace std;
 
 // Skriver ut vektorn på formatet: (a,b,c)
 void skrivUtVek(const vector<int>& vek){
-    double sum(0);
+    double sum;
     for (size_t i=0; i<vek.size(); ++i){
         sum = vek[i];
         cout << sum << " ";
@@ -83,7 +83,7 @@ void testaFyllMedSlumptal(){
         if (x==minsta) observeraMinsta = true;
         if (x==storsta) observeraStorsta = true;
         if (minsta < x && x < storsta) observeraMellan = true;
-        if (x< minsta || storsta<x) observeraUtanfor = true;
+        if (x<minsta || storsta<x) observeraUtanfor = true;
     }
     assert(observeraMinsta && observeraStorsta && observeraMellan && !observeraUtanfor);
 
@@ -313,4 +313,75 @@ void testaFyllMedUnikaSlumptal(){
     }
     cout << endl;
 }
+
+//14.6
+bool innehallerTal(const vector<int>& v, int tal){
+    for (size_t i=0; i<v.size(); ++i){
+        if (v[i] == tal)
+            return true;
+    }
+    return false;
+}
+
+vector<int> lorroradFranAnvandare(){
+    vector<int> lottorad;
+    const int min = 1;
+    const int max = 35;
+
+    cout << "Skriv ett tal mellan " << min << " och " << max << "!" << endl;
+    while(lottorad.size() < 7){
+        cout << "tal" << lottorad.size() + 1 << ": ";
+        int varde;
+        cin >> varde;
+        if (varde<min || varde>max || innehallerTal(lottorad, varde)){
+            cout << "Talet ligger utanför intervallet" << endl;
+            continue;
+        }
+        lottorad.push_back(varde);
+    }
+    return lottorad;
+}
+
+vector<int> slumplottorad(){
+    vector<int> rad;
+    while (rad.size()<7){
+        int tal = rand() % 35+1;
+        if (!innehallerTal(rad, tal))
+            rad.push_back(tal);
+    }
+    return rad;
+}
+
+int antalMatch(const vector<int>& v1, const vector<int>& v2){
+    int antal = 0;
+    for (size_t i=0; i<v1.size(); ++i){
+        if (innehallerTal(v1, v2[i]))
+            antal++;
+    }
+    return antal;
+}
+
+void korTusenExperiment(const vector<int>& anvandarensRad){
+    int max = 0;
+    int summa = 0;
+    for (int i=0; i< 1000; ++i){
+        vector<int> rad = slumplottorad();
+        int m = antalMatch(anvandarensRad, rad);
+        summa += m;
+        if (m > max)
+            max = m;
+    }
+    double genomsnitt = summa / 1000.0;
+    cout << "max " << max << ",  genomsnitt " << genomsnitt << endl;
+}
+
+void lottoexperimentera(){
+    vector<int> anvandarensRad = lorroradFranAnvandare();
+    for (int i=0; i<20; i+=1){
+        korTusenExperiment(anvandarensRad);
+    }
+}
+
+
+
 
