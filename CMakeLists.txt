@@ -18,6 +18,7 @@ add_executable(IntroProg main.cpp
     kap12Loopar.cpp
     kap13charOchString.cpp
     kap14vektorer.cpp
+    kap15Structar.cpp
 )
 
 include(GNUInstallDirs)
