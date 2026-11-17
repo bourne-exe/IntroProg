@@ -107,8 +107,11 @@ void testaFyllMedUnikaSlumptal();
 void lottoexperimentera();
 void provaSkrivSudoku();
 
+//Kap 15
+void skrivUtVaxelV3(int belopp);
+
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    provaSkrivSudoku();
+    skrivUtVaxelV3(947);
     return 0;
 }
