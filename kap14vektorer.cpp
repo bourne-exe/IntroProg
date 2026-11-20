@@ -386,10 +386,13 @@ void lottoexperimentera(){
 //14.8.2
 void skrivUtSudoku(const array<array<int,9>,9>& sudoku){
     for (int r = 0; r < 9; ++r) {
-        if (r % 3 == 0) cout << "+-------+-------+-------+\n";
+        if (r % 3 == 0)
+            cout << "+-------+-------+-------+\n";
         for (int c = 0; c < 9; ++c) {
-            if (c % 3 == 0) cout << "| ";
-            if (sudoku[r][c] == 0) cout << "  ";
+            if (c % 3 == 0)
+                cout << "| ";
+            if (sudoku[r][c] == 0)
+                cout << "  ";
             else cout << sudoku[r][c] << " ";
         }
         cout << "|\n";
