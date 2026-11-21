@@ -200,3 +200,88 @@ void testaDatum(){
     assert(arMindreDatum(datumFranAMD(2025, 12, 31), datumFranAMD(2026, 1, 1)));
 }
 
+//15.4
+struct Valuta{
+    string m_namn;
+    vector<int> m_valorer;
+};
+
+const Valuta SEK{"svenska kronor", {500,200,100,50,20,10,5,2,1}};
+
+bool arGiltig(const Valuta& v){
+    for (size_t i=1; i<v.m_valorer.size(); ++i){
+        if (v.m_valorer[i-1] <= v.m_valorer[i])
+            return false;
+    }
+    return true;
+}
+
+bool arLika(const Valuta& a, const Valuta& b){
+    return a.m_namn == b.m_namn && a.m_valorer == b.m_valorer;
+}
+
+struct Vaxel4{
+    Valuta m_valuta;
+    vector<int> m_antal;
+};
+
+bool arLika(const Vaxel4& a, const Vaxel4& b){
+    return a.m_antal == b.m_antal && arLika(a.m_valuta, b.m_valuta);
+}
+
+Vaxel4 vaxel4FranValutaAntal(const Valuta& valuta, const vector<int>& antalAvValor){
+    assert(arGiltig(valuta));
+    assert(valuta.m_valorer.size()== antalAvValor.size());
+
+    Vaxel4 vaxeln{valuta, antalAvValor};
+    return vaxeln;
+}
+
+Vaxel4 vaxel4FranValutaBelopp(const Valuta& valuta, int belopp){
+    assert(arGiltig(valuta));
+
+    int kvarAttBetala = belopp;
+    vector<int> antal;
+
+    for (size_t i=0; i<valuta.m_valorer.size(); ++i){
+        int valor = valuta.m_valorer[i];
+        int hurManga = kvarAttBetala/valor;
+        antal.push_back(hurManga);
+        kvarAttBetala %= valor;
+    }
+
+    return Vaxel4{valuta, antal};
+}
+
+int beloppFranVaxel(const Vaxel4& vaxel){
+    int belopp = 0;
+    for (size_t i=0; i<vaxel.m_valuta.m_valorer.size(); ++i){
+        int valor = vaxel.m_valuta.m_valorer[i];
+        belopp += valor * vaxel.m_antal[i];
+    }
+    return belopp;
+}
+
+void skrivUtVaxel(const Vaxel4& vaxel){
+    for (size_t i=0; i<vaxel.m_antal.size(); ++i){
+        int valor = vaxel.m_valuta.m_valorer[i];
+        int antal = vaxel.m_antal[i];
+        if (antal > 0)
+            cout << antal << " st " << valor << endl;
+    }
+}
+
+void automattestaVaxel4(){
+    cout << "testar funktion" << endl;
+
+    assert(arLika(vaxel4FranValutaBelopp(SEK, 947), vaxel4FranValutaAntal(SEK, {1,2,0,0,2,0,1,1,0})));
+    Vaxel4 vaxel = vaxel4FranValutaBelopp(SEK, 836);
+    assert(beloppFranVaxel(vaxel) == 836);
+
+    cout << "testet funkar!" << endl;
+}
+
+void provaVaxel4(){
+    Vaxel4 vaxel = vaxel4FranValutaBelopp(SEK, 947);
+    skrivUtVaxel(vaxel);
+}
