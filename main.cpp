@@ -110,9 +110,14 @@ void provaSkrivSudoku();
 //Kap 15
 void skrivUtVaxelV3(int belopp);
 void testaDatum();
+void automattestaVaxel4();
+void provaVaxel4();
+
 
 int main(){
     cout << "Labbar från kompendiet!" << endl << endl;
-    testaDatum();
+    automattestaVaxel4();
+    cout << endl;
+    provaVaxel4();
     return 0;
 }
