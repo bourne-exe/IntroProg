@@ -108,7 +108,7 @@ bool arEttTillatetDatum(const Datum& datum){
         return false;
     if (datum.m_dag<1)
         return false;
-    if (antalDagarIManad(datum.m_manad, datum.m_ar)<datum.m_dag)
+    if (antalDagarIManad(datum.m_manad, datum.m_ar)>datum.m_dag)
         return false;
     return true;
 }
