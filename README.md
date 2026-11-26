@@ -1,6 +1,6 @@
 # IntroProg
 
-C++ exercises from my introductory programming course at university. Each file covers one chapter of the course material, building from basic syntax to structured data. The code is written and executed in Qt Creator.
+C++ exercises from my introductory programming course at university. Each file covers one chapter of the course material, building from basic syntax to structured data. The code is written and executed in Qt Creator (also used in Swedish language).
 
 ## Contents
 
